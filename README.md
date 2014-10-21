@@ -4,7 +4,7 @@ Project Structure:
 + ramdisk - current changes
 
 
-	ADD the empty folders"data", "dev", "proc", "sys", and "system"
+	ADD the empty folders"data", "dev", "proc", "sys", and "system", OR, run createfolders.sh
 + boot.img - first built image
 + boot.img-kernel - the stock asop kernel
 + boot.img-ramdisk.cipo.gz - the asop ramdisk
