@@ -23,5 +23,5 @@ find . | cpio -o -H newc | gzip > ../ramdisk-boot
 echo 'Ramdisk Complete'
 cd ..
 echo 'Packing into Boot.img'
-mkbootimg --kernel boot.img-kernel --ramdisk ramdisk-boot -o boot.img
+./bin/mkbootimg --kernel boot.img-kernel --ramdisk ramdisk-boot -o boot.img
 echo 'Packing Complete.'
