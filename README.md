@@ -18,3 +18,4 @@
     *  	then `cd ..`
     *  	then run `mkbootimg --kernel boot.img-kernel --ramdisk ram -o boot.img`  (I just added mkbootimg to ~/bin)
 
+	`mkbootimg` is from android source code.
