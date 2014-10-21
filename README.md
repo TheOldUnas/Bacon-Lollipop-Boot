@@ -1,4 +1,4 @@
-Boot.img
+##Boot.img
 
 Project Structure:
 + ramdisk - current changes
@@ -13,6 +13,7 @@ Project Structure:
 
 
 Build Instructions:
++ run "./createfolders.sh" to create empty folders required for building
 +  cd to the ramdisk folder
 +  run "find . | cpio -o -H newc | gzip > ../ramdisk" in terminal"
 +  then cd ..
