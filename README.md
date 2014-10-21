@@ -14,7 +14,7 @@
 *  Manual:
     *  	Create empty folders "data", "dev", "proc", "sys", and "system" required for building
     *  	cd to the ramdisk folder
-    *  	run `find . | cpio -o -H newc | gzip > ../ramdisk" in terminal`
+    *  	run `find . | cpio -o -H newc | gzip > ../ram" in terminal`
     *  	then `cd ..`
     *  	then run `mkbootimg --kernel boot.img-kernel --ramdisk ram -o boot.img`  (I just added mkbootimg to ~/bin)
 
