@@ -215,7 +215,7 @@ on post-fs
     chmod 0440 /proc/last_kmsg
 
     # make the selinux kernel policy world-readable
-    # chmod 0444 /sys/fs/selinux/policy
+    chmod 0444 /sys/fs/selinux/policy
 
     # create the lost+found directories, so as to enforce our permissions
     mkdir /cache/lost+found 0770 root root
@@ -301,10 +301,10 @@ on post-fs-data
     mkdir /data/security 0711 system system
 
     # Reload policy from /data/security if present.
-    # setprop selinux.reload_policy 1
+    setprop selinux.reload_policy 1
 
     # Set SELinux security contexts on upgrade or policy update.
-    # restorecon_recursive /data
+    restorecon_recursive /data
 
     # If there is no fs-post-data action in the init.<device>.rc file, you
     # must uncomment this line, otherwise encrypted filesystems
@@ -400,8 +400,8 @@ on boot
     chown root radio /proc/cmdline
 
 # Set these so we can remotely update SELinux policy
-    # chown system system /sys/fs/selinux/load
-    # chown system system /sys/fs/selinux/permissive
+    chown system system /sys/fs/selinux/load
+    chown system system /sys/fs/selinux/permissive
 
 # Define TCP buffer sizes for various networks
 #   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
