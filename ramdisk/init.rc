@@ -301,10 +301,10 @@ on post-fs-data
     mkdir /data/security 0711 system system
 
     # Reload policy from /data/security if present.
-    setprop selinux.reload_policy 1
+    setprop selinux.reload_policy 0
 
     # Set SELinux security contexts on upgrade or policy update.
-    restorecon_recursive /data
+    # restorecon_recursive /data
 
     # If there is no fs-post-data action in the init.<device>.rc file, you
     # must uncomment this line, otherwise encrypted filesystems
@@ -401,7 +401,7 @@ on boot
 
 # Set these so we can remotely update SELinux policy
     chown system system /sys/fs/selinux/load
-    chown system system /sys/fs/selinux/permissive
+    #chown system system /sys/fs/selinux/permissive
 
 # Define TCP buffer sizes for various networks
 #   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
