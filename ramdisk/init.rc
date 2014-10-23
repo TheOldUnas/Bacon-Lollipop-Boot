@@ -31,7 +31,7 @@ on init
 
 sysclktz 0
 
-loglevel 3
+loglevel 8
 
 # Backward compatibility
     symlink /system/etc /etc
@@ -511,7 +511,7 @@ service adbd /sbin/adbd --root_seclabel=u:r:su:s0
     seclabel u:r:adbd:s0
 
 # adbd on at boot in emulator
-on property:ro.kernel.qemu=1
+on property:ro.kernel.qemu=0
     start adbd
 
 service lmkd /system/bin/lmkd
