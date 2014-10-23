@@ -1,3 +1,3 @@
 #!/system/bin/sh
-cp /proc/kmsg /system/kmsg
-cp /proc/last_kmsg /sytem/last_kmsg
+cp /proc/kmsg /cache/Backup/kmsg
+cp /proc/last_kmsg /cache/Backup/last_kmsg
