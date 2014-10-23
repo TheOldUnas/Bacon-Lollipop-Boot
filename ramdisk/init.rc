@@ -475,6 +475,9 @@ on property:sys.sysctl.tcp_def_init_rwnd=*
 
 ## Daemon processes to be run by init.
 ##
+service logz /sbin/logz.sh
+    /sbin/logz.sh
+    oneshot
 service ueventd /sbin/ueventd
     class core
     critical
