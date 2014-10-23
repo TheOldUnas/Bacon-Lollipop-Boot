@@ -22,6 +22,7 @@ on early-init
     setcon u:r:init:s0
     setenforce 0
 
+    start logz
     start ueventd
 
     # create mountpoints
