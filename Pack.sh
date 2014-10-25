@@ -1,5 +1,4 @@
 #!/bin/bash
-
 echo 'Checking folders...'
 if ! [ -d ./ramdisk/data ]; then
     mkdir ./ramdisk/data
@@ -17,11 +16,6 @@ if ! [ -d ./ramdisk/system ]; then
     mkdir ./ramdisk/system
 fi
 echo 'Folders avaliabe'
-echo 'Packing Ramdisk...'
-cd ./ramdisk
-find . | cpio -o -H newc | gzip > ../ramdisk-boot
-echo 'Ramdisk Complete'
-cd ..
 echo 'Packing into Boot.img'
-./bin/mkbootimg --kernel boot.img-kernel --ramdisk ramdisk-boot -o boot.img
+./bin/mkboot boot boot.img
 echo 'Packing Complete.'
