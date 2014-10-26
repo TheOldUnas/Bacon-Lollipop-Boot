@@ -5,7 +5,7 @@
 
 # Data files
 /adb_keys		u:object_r:adb_keys_file:s0
-/default.prop		u:object_r:rootfs:s0
+/default\.prop		u:object_r:rootfs:s0
 /fstab\..*		u:object_r:rootfs:s0
 /init\..*		u:object_r:rootfs:s0
 /res(/.*)?		u:object_r:rootfs:s0
@@ -162,21 +162,27 @@
 # Data files
 #
 /data(/.*)?		u:object_r:system_data_file:s0
+/data/.layout_version		u:object_r:install_data_file:s0
 /data/backup(/.*)?		u:object_r:backup_data_file:s0
 /data/secure/backup(/.*)?	u:object_r:backup_data_file:s0
 /data/security(/.*)?	u:object_r:security_file:s0
+/data/system/ndebugsocket	u:object_r:system_ndebug_socket:s0
 /data/drm(/.*)?		u:object_r:drm_data_file:s0
 /data/gps(/.*)?		u:object_r:gps_data_file:s0
+/data/resource-cache(/.*)? u:object_r:resourcecache_data_file:s0
 /data/dalvik-cache(/.*)? u:object_r:dalvikcache_data_file:s0
+/data/dalvik-cache/profiles(/.*)? u:object_r:dalvikcache_profiles_data_file:s0
 /data/anr(/.*)?		u:object_r:anr_data_file:s0
-/data/app(/.*)?		u:object_r:apk_data_file:s0
-/data/app/vmdl.*\.tmp	u:object_r:apk_tmp_file:s0
-/data/app-private(/.*)?		u:object_r:apk_private_data_file:s0
-/data/app-private/vmdl.*\.tmp	u:object_r:apk_private_tmp_file:s0
+/data/app(/.*)?                       u:object_r:apk_data_file:s0
+/data/app/vmdl.*\.tmp(/.*)?           u:object_r:apk_tmp_file:s0
+/data/app-private(/.*)?               u:object_r:apk_private_data_file:s0
+/data/app-private/vmdl.*\.tmp(/.*)?   u:object_r:apk_private_tmp_file:s0
 /data/tombstones(/.*)?	u:object_r:tombstone_data_file:s0
 /data/local/tmp(/.*)?	u:object_r:shell_data_file:s0
-/data/local/tmp/selinux(/.*)?   u:object_r:tombstone_data_file:s0
+/data/media(/.*)?	u:object_r:media_rw_data_file:s0
+
 # Misc data
+/data/misc/adb(/.*)?            u:object_r:adb_keys_file:s0
 /data/misc/bluetoothd(/.*)?	u:object_r:bluetoothd_data_file:s0
 /data/misc/bluetooth(/.*)?	u:object_r:bluetooth_data_file:s0
 /data/misc/bluedroid(/.*)?	u:object_r:bluetooth_data_file:s0
@@ -186,15 +192,21 @@
 /data/misc/wifi(/.*)?		u:object_r:wifi_data_file:s0
 /data/misc/camera(/.*)?	u:object_r:camera_calibration_file:s0
 /data/misc/dhcp(/.*)?           u:object_r:dhcp_data_file:s0
-/data/misc/adb(/.*)?            u:object_r:adb_keys_file:s0
+/data/misc/media(/.*)?          u:object_r:media_data_file:s0
 # App sandboxes
-/data/data/.*		u:object_r:app_data_file:s0
-# Wallpaper file.
-/data/data/com.android.settings/files/wallpaper	u:object_r:wallpaper_file:s0
+/data/misc/net(/.*)?            u:object_r:net_data_file:s0
+/data/misc/shared_relro(/.*)?   u:object_r:shared_relro_file:s0
+/data/misc/sms(/.*)?            u:object_r:radio_data_file:s0
+/data/misc/systemkeys(/.*)?     u:object_r:systemkeys_data_file:s0
+/data/misc/vpn(/.*)?            u:object_r:vpn_data_file:s0
+/data/misc/wifi(/.*)?           u:object_r:wifi_data_file:s0
+/data/misc/wifi/sockets(/.*)?   u:object_r:wpa_socket:s0
+/data/misc/wifi/sockets/wpa_ctrl.*   u:object_r:system_wpa_socket:s0
+/data/misc/wifi/hostapd(/.*)?   u:object_r:wpa_socket:s0
+/data/misc/zoneinfo(/.*)?       u:object_r:zoneinfo_data_file:s0
+
 # Wallpaper file for other users
 /data/system/users/[0-9]+/wallpaper		u:object_r:wallpaper_file:s0
-# Downloaded files
-/data/data/com.android.providers.downloads/cache u:object_r:download_file:s0
 #############################
 # efs files
 #
@@ -202,11 +214,11 @@
 #############################
 # Cache files
 #
-#/cache(/.*)?		u:object_r:cache_file:s0
-#/cache/.*\.data	u:object_r:cache_backup_file:s0
-#/cache/.*\.restore	u:object_r:cache_backup_file:s0
+/cache(/.*)?		u:object_r:cache_file:s0
+/cache/.*\.data	u:object_r:cache_backup_file:s0
+/cache/.*\.restore	u:object_r:cache_backup_file:s0
 # LocalTransport (backup) uses this directory
-#/cache/backup(/.*)?	u:object_r:cache_backup_file:s0
+/cache/backup(/.*)?	u:object_r:cache_backup_file:s0
 #############################
 # sysfs files
 #
@@ -224,3 +236,5 @@
 
 # Persist filesystem
 # /persist(/.*)?                    u:object_r:persist_file:s0
+/dev/diag                          u:object_r:diag_device:s0
+
