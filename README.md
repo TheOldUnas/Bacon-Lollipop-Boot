@@ -13,4 +13,4 @@
     *  	`cd` to the git folder
     *  	Run `./bin/mkboot boot boot.img`
 
-	`mkbootimg` is from android source code.
+	`mkboot` is from https://github.com/xiaolu/mkbootimg_tools.
