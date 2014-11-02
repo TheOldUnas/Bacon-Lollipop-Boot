@@ -6,6 +6,7 @@
 * boot.img-ramdisk.cipo.gz - The asop ramdisk
 
 ##Build Instructions:
+*Outdated
 *  Automatic:
     *   Run `./Pack.sh`
 *  Manual:
